@@ -9,7 +9,7 @@ pipeline {
         script {
           checkout scm
           sh 'rm -rf SWE645_Doan_HW1/src/main/webapp/*.war'
-          sh 'jar -cvf studentSurvey.war -c SWE645_Doan_HW1/src/main/webapp/ .'
+          sh 'jar -cvf studentSurvey.war -C SWE645_Doan_HW1/src/main/webapp/ .'
           sh 'echo ${BUILD_TIMESTAMP}'
           sh "docker login -u cparupal -p ${DOCKERHUB_PASS}"
           def customImage = docker.build("cparupal/studentsurvey645:${BUILD_TIMESTAMP}")
