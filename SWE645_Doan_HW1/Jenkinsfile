@@ -1,0 +1,29 @@
+pipeline {
+  agent any
+  environment {
+    DOCKERHUB_PASS = credentials('docker-pass')
+  }
+  stages {
+    stage ("Building the web app into a docker image"){
+      steps {
+        script {
+          checkout scm
+          sh 'rm -rf src/main/webapp/*.war'
+          sh 'jar -cvf studentSurvey.war -c src/main/webapp/ .'
+          sh 'echo ${BUILD_TIMESTAMP}'
+          sh "docker login -u cparupal -p ${DOCKERHUB_PASS}"
+          def customImage = docker.build("cparupal/studentsurvey645:${BUILD_TIMESTAMP}")
+        }
+      }
+    }
+
+    stage("Pushing Image to Dockerhub"){
+      steps{
+        script{
+          sh 'docker push cparupal/studentsurvey645:${BUILD_TIMESTAMP}'
+        }
+      }
+    }
+
+  }
+}
