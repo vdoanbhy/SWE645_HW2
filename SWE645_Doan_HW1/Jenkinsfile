@@ -12,7 +12,7 @@ pipeline {
           sh 'jar -cvf studentSurvey.war -C SWE645_Doan_HW1/src/main/webapp/ .'
           sh 'echo ${BUILD_TIMESTAMP}'
           sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
-          def customImage = docker.build("cparupal/studentsurvey645:${BUILD_TIMESTAMP}")
+          sh "docker build --tag cparupal/studentsurvey645:${BUILD_TIMESTAMP} -C SWE645_Doan_HW1/src/main/webapp/ ."
         }
       }
     }
@@ -20,7 +20,7 @@ pipeline {
     stage("Pushing Image to Dockerhub"){
       steps{
         script{
-          sh 'docker push cparupal/studentsurvey645:${BUILD_TIMESTAMP}'
+          sh "docker push cparupal/studentsurvey645:${BUILD_TIMESTAMP}"
         }
       }
     }
