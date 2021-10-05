@@ -12,6 +12,7 @@ pipeline {
           sh 'jar -cvf studentSurvey.war -C SWE645_Doan_HW1/src/main/webapp/ .'
           sh 'echo ${BUILD_TIMESTAMP}'
           sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
+          sh 'pwd'
           sh "docker build -t cparupal/studentsurvey645:1.1 SWE645_Doan_HW1/src/main/webapp/"
           
         }
