@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    DOCKERHUB_PASS = credentials('docker-pass')
+    DOCKERHUB_PASS = credentials('dockerhub_pwd')
   }
   stages {
     stage ("Building the web app into a docker image"){
