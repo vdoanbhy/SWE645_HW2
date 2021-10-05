@@ -13,7 +13,7 @@ pipeline {
           sh 'mv studentSurvey.war SWE645_Doan_HW1/src/main/webapp/'
           sh 'echo ${BUILD_TIMESTAMP}'
           sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
-          sh "docker build -t cparupal/studentsurvey645:1.1 SWE645_Doan_HW1/src/main/webapp/"
+          sh "docker build -t cparupal/studentsurvey645:${env.BUILD_ID} SWE645_Doan_HW1/src/main/webapp/"
           
         }
       }
@@ -22,7 +22,7 @@ pipeline {
     stage("Pushing Image to Dockerhub"){
       steps{
         script{
-          sh "docker push cparupal/studentsurvey645:${BUILD_TIMESTAMP}"
+          sh "docker push cparupal/studentsurvey645:${env.BUILD_ID}"
         }
       }
     }
