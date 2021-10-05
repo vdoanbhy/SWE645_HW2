@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    DOCKERHUB_PASS = 'PSCKparu_22'
+    DOCKERHUB_PASS = credentials('docker-pass')
   }
   stages {
     stage ("Building the web app into a docker image"){
