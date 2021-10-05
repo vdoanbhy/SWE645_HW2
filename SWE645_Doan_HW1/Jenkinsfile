@@ -30,7 +30,7 @@ pipeline {
     stage("Deploying image to cluster on Rancher"){
       steps{
         script{
-          sh "kubectl set image deployment/studentsurvey studentsurvey=cparupal/studentsurvey645:${env.BUILD_ID} -n jenkins-pipeline"
+          sh "kubectl set image deployment/studentsurvey studentsurvey=cparupal/studentsurvey645:${env.BUILD_ID} -n swe645"
         }
       }
     }
