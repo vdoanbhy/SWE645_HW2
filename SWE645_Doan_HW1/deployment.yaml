@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: studentsurvey
+  name: studentsurvey
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: studentsurvey
+  template:
+    metadata:
+      labels:
+        app: studentsurvey
+    spec:
+      containers:
+      - image: cparupal/studentsurvey645:21
+        imagePullPolicy: Always
+        name: studentsurvey
+        ports:
+        - containerPort: 8080
+          name: ss-port
+          protocol: TCP
