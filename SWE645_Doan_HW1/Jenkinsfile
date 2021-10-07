@@ -12,7 +12,7 @@ pipeline {
           sh 'jar -cvf studentSurvey.war -C SWE645_Doan_HW1/src/main/webapp/ .'
           sh 'mv studentSurvey.war SWE645_Doan_HW1/src/main/webapp/'
           sh 'echo ${BUILD_TIMESTAMP}'
-          sh "docker login -u vdoandocker -p $DOCKERHUB_PASS_PSW"
+          sh "docker login -u cparupal -p $DOCKERHUB_PASS_PSW"
           sh "docker build -t cparupal/studentsurvey645:${env.BUILD_ID} SWE645_Doan_HW1/src/main/webapp/"
           
         }
