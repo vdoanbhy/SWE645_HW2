@@ -1,0 +1,124 @@
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  annotations:
+    field.cattle.io/creatorId: system:admin
+    objectset.rio.cattle.io/applied: H4sIAAAAAAAA/4yQz07DMAzGXwX53I52pRuLxIkDB668gJM4WyBxusQth6rvjjo4TEL8udnS7/v8k2eIJGhRENQMyJwExScu65r0KxkpJJvs08agSKCNT7fegoIhp8kXn9jzsTZhLEK5NplQCKofo+mdKdfH6Q0URGQ8UiSWK2Dqqptnz/bh8bPyzy7GSKDA1GcrZ/cvvAxo1gwsFVyMfeIXH6kIxgEUjyFUEFBT+PUNJywnUODa/d6i22mz63TX9ha7vnX3vdb7u+2hafvGHbYNufXaN9lrHReIpLbkcAyy0mUgA2peJ0EZv2QK5YnsEzHlizmoZlk+AgAA//9WZmcUyAEAAA
+    objectset.rio.cattle.io/id: provisioning-cluster-create
+    objectset.rio.cattle.io/owner-gvk: management.cattle.io/v3, Kind=Cluster
+    objectset.rio.cattle.io/owner-name: c-qdtqf
+    objectset.rio.cattle.io/owner-namespace: ""
+  creationTimestamp: "2021-10-08T16:04:54Z"
+  finalizers:
+  - wrangler.cattle.io/provisioning-cluster-remove
+  generation: 1
+  labels:
+    objectset.rio.cattle.io/hash: f177daf6bc63b315da351f85bb74290150f920ef
+  managedFields:
+  - apiVersion: provisioning.cattle.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:objectset.rio.cattle.io/applied: {}
+          f:objectset.rio.cattle.io/id: {}
+          f:objectset.rio.cattle.io/owner-gvk: {}
+          f:objectset.rio.cattle.io/owner-name: {}
+          f:objectset.rio.cattle.io/owner-namespace: {}
+        f:finalizers:
+          .: {}
+          v:"wrangler.cattle.io/provisioning-cluster-remove": {}
+        f:labels:
+          .: {}
+          f:objectset.rio.cattle.io/hash: {}
+      f:spec: {}
+      f:status:
+        .: {}
+        f:clientSecretName: {}
+        f:clusterName: {}
+        f:conditions: {}
+        f:observedGeneration: {}
+        f:ready: {}
+    manager: rancher
+    operation: Update
+    time: "2021-10-08T16:13:00Z"
+  name: c-qdtqf
+  namespace: fleet-default
+  resourceVersion: "488345"
+  uid: c0ce3b9a-e266-479e-93ae-170026a28edf
+spec: {}
+status:
+  clientSecretName: c-qdtqf-kubeconfig
+  clusterName: c-qdtqf
+  conditions:
+  - status: "True"
+    type: Pending
+  - lastUpdateTime: "2021-10-08T16:12:41Z"
+    status: "True"
+    type: Provisioned
+  - lastUpdateTime: "2021-10-08T16:12:56Z"
+    status: "True"
+    type: Waiting
+  - lastUpdateTime: "2021-10-08T16:04:53Z"
+    status: "True"
+    type: BackingNamespaceCreated
+  - lastUpdateTime: "2021-10-08T16:04:53Z"
+    status: "True"
+    type: DefaultProjectCreated
+  - lastUpdateTime: "2021-10-08T16:04:53Z"
+    status: "True"
+    type: SystemProjectCreated
+  - lastUpdateTime: "2021-10-08T16:04:54Z"
+    status: "True"
+    type: InitialRolesPopulated
+  - lastUpdateTime: "2021-10-08T16:13:00Z"
+    status: "False"
+    type: Reconciling
+  - lastUpdateTime: "2021-10-08T16:04:54Z"
+    status: "False"
+    type: Stalled
+  - lastUpdateTime: "2021-10-08T16:14:49Z"
+    status: "True"
+    type: Created
+  - lastUpdateTime: "2021-10-08T16:04:54Z"
+    status: "True"
+    type: RKECluster
+  - lastUpdateTime: "2021-10-08T16:04:54Z"
+    status: "True"
+    type: CreatorMadeOwner
+  - lastUpdateTime: "2021-10-08T16:04:56Z"
+    status: "True"
+    type: NoDiskPressure
+  - lastUpdateTime: "2021-10-08T16:04:56Z"
+    status: "True"
+    type: NoMemoryPressure
+  - lastUpdateTime: "2021-10-08T16:14:49Z"
+    status: "True"
+    type: Connected
+  - lastUpdateTime: "2021-10-08T16:12:42Z"
+    status: "False"
+    type: AlertingEnabled
+  - lastUpdateTime: "2021-10-08T16:12:54Z"
+    status: "True"
+    type: SystemAccountCreated
+  - lastUpdateTime: "2021-10-08T16:12:55Z"
+    status: "True"
+    type: AgentDeployed
+  - lastUpdateTime: "2021-10-08T16:12:55Z"
+    status: "False"
+    type: PrometheusOperatorDeployed
+  - lastUpdateTime: "2021-10-08T16:12:56Z"
+    status: "True"
+    type: Ready
+  - lastUpdateTime: "2021-10-08T16:13:17Z"
+    status: "True"
+    type: Updated
+  - lastUpdateTime: "2021-10-08T16:13:07Z"
+    status: "True"
+    type: ServiceAccountMigrated
+  - lastUpdateTime: "2021-10-08T16:13:17Z"
+    status: "True"
+    type: GlobalAdminsSynced
+  observedGeneration: 1
+  ready: true
